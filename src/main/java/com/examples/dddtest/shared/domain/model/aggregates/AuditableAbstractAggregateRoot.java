@@ -8,6 +8,7 @@ import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @EntityListeners(AuditingEntityListener.class)
@@ -17,7 +18,7 @@ public abstract class AuditableAbstractAggregateRoot<T extends AbstractAggregate
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
